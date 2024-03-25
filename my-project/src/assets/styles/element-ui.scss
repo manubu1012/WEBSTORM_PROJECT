@@ -1,0 +1,195 @@
+// cover some element-ui styles
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.fixed-width {
+  .el-button--mini {
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block
+  }
+}
+
+// fix date-picker ui bug in filter-item
+.el-range-editor.el-input__inner {
+  display: inline-flex !important;
+}
+
+// to fix el-date-picker css style
+.el-range-separator {
+  box-sizing: content-box;
+}
+
+.el-menu--collapse
+  > div
+  > .el-submenu
+  > .el-submenu__title
+  .el-submenu__icon-arrow {
+  display: none;
+}
+
+//.el-dropdown .el-dropdown-link{
+//  color: var(--el-color-primary) !important;
+//}
+
+.el-input{
+  background-color: #FFFFFF;
+  .el-input__inner{
+    background-color: #FFFFFF;
+  }
+
+}
+//检索样式end
+
+//复选框样式修改start
+.el-checkbox__inner{
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.el-checkbox__inner::after{
+  top:2px !important;
+  left: 5px !important;
+  width: 5px !important;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner{
+  background-color: #2779DC !important;
+}
+
+.el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  background-color: #2779DC !important;
+}
+//复选框样式修改end
+
+//表格样式修改start
+.el-table th.el-table__cell{
+  //border-top: 1px solid #2C61B3 !important;
+}
+
+.el-table td{
+  padding: 4px 4px !important;//默认上下是padding12px
+}
+
+/* 用来设置当前页面element全局table 鼠标移入某行时的背景色*/
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  border-top:1px solid #f6d604 !important;
+  border-bottom:1px solid #f6d604 !important;
+}
+
+/* 用来设置当前页面element全局table 鼠标移入某行时的背景色*/
+.el-table__row:hover > td {
+  border-top:1px solid #f6d604 !important;
+  border-bottom:1px solid #f6d604 !important;
+}
+
+.el-table td, .el-table th {
+  border:none !important;
+}
+
+//斑马线样式
+.el-table__row.statistics-warning-row{
+  background: #F2F5FA !important;
+}
+
+/* 用来设置当前页面element全局table 鼠标移入某行时的背景色*/
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  border-top:1px solid #f6d604 !important;
+  border-bottom:1px solid #f6d604 !important;
+}
+
+.el-table td, .el-table th {
+  border:none !important;
+}
+
+textarea:hover {
+  outline: 1px solid #719ECE !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 1px #719ECE;
+}
+
+//表格样式修改end
+.el-message {
+  top: 45% !important;
+  z-index: 9999 !important;
+  .el-icon {
+    font-size: 30px;
+  }
+  .el-message__content {
+    font-size: 20px;
+  }
+  @media (min-width: 1600px) {
+    .el-icon {
+      font-size: 34px;
+    }
+    .el-message__content {
+      font-size: 26px;
+    }
+  }
+}
+.myMessageBoxClass{
+  width: 800px !important;
+}

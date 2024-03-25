@@ -1,0 +1,107 @@
+<template>
+      <div class="common-layout" height="100%">
+      <el-container>
+        <el-aside width="auto">
+          <common-aside/>
+        </el-aside>
+        <el-container>
+          <el-header>
+            <commonHeaderVue></commonHeaderVue>
+          </el-header>
+          <commontagVue />
+          <el-main class="home" ref="scrollbox">
+            <router-view/>
+          </el-main>
+          <el-footer>Footer</el-footer>
+        </el-container>
+      </el-container>
+    </div>
+    
+ </template>
+
+<script lang="ts" setup>
+import commonHeaderVue from '@/components/common-header/Common-header.vue'
+import CommonAside from '@/components/common-aside/Common-aside.vue'
+
+
+</script>
+
+<style lang="less">
+
+@import '@styles/global.less';
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #app {
+    height: 100vh;
+    width: 100%;
+  }
+  .el-header,
+  .el-footer {
+    background-color: @primary-color;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .el-aside {
+    background-color:  @primary-color;
+    height: 100vh;
+    color: black;
+    text-align: center;
+  }
+
+  .el-main {
+    height:80vh;
+    background-color: @secondary-color;
+    color: #333;
+
+  }
+
+  body>.el-container {
+    margin-bottom: 40px;
+  }
+
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
+  </style>
+
+<template>
+  <div class="app" :class="{ 'dark-mode': darkMode }">
+    <button @click="toggleTheme">切换主题</button>
+    <p>这是一个Vue 3应用</p>
+  </div>
+
+  <div class="dark-mode">cesfeagfeeeeeeeeeeeeee</div>
+</template>
+
+<script setup>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+const store = useStore();
+const toggleTheme = () => {
+  store.commit('toggleDarkMode');
+};
+const darkMode = computed(() => store.state.darkMode);
+const darkMode2 ="#FFF";
+
+</script>
+
+<style lang="less">
+@import '@styles/global.less';
+
+.dark-mode {
+  background-color: @primary-color;
+  color: v-bind(darkMode2);
+}
+</style>
